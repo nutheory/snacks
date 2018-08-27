@@ -1,6 +1,6 @@
 //@flow
 import React, { Component } from "react"
-import Country from "./country"
+import CountryElement from "./country_element"
 import { feature } from "topojson-client"
 import { connect } from "react-redux"
 import { getCountryBoundries } from "../actions/index"
@@ -31,19 +31,19 @@ class Map extends Component<Props, *> {
   }
 
   render() {
-    const worldData = this.props.map.objects  ? feature(this.props.map, this.props.map.objects.countries).features : []
+    const worldData = this.props.map.objects ? feature(this.props.map, this.props.map.objects.countries).features : []
     return (
       <div className="scaling-svg-container">
         <svg className="scaling-svg" viewport="0 0 800 600" preserveAspectRatio="none">
           <g className="countries">
             { worldData.map((country,i) => (
-                <Country
-                  key={`country-${i}`}
-                  country={country} 
-                  idx={i} 
-                  count={worldData.length}
-                  selected={ this.props.country && this.props.country.numericCode === country.id } 
-                  selectCountry={this.selectCountry} />
+              <CountryElement
+                key={`country-${i}`}
+                country={country} 
+                idx={i} 
+                count={worldData.length}
+                selected={ this.props.country && this.props.country.numericCode === country.id } 
+                selectCountry={this.selectCountry} />
               )) }
           </g>
         </svg>

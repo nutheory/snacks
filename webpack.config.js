@@ -39,7 +39,7 @@ module.exports = [
           ]
         },
         {
-          test: /.*\.(gif|png|jpe?g|svg)$/i,
+          test: /.*\.(gif|png|jpe?g|svg|pdf)$/i,
           use: "file-loader?name=[hash].[ext]&publicPath=assets/&outputPath=assets/"
         }, {
           test: /.*\.(eot|ttf|woff|woff2|)$/i,

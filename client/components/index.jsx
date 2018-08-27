@@ -4,10 +4,9 @@ import { connect } from "react-redux"
 import { getCountryList, getCountryDetails } from "../actions/index"
 import { find, propEq, last } from 'ramda'
 import Map from './map'
+import CountrySelector from './country_selector'
 import CountryCard from './country_card'
-import me from '../assets/headshot.png'
-import github from '../assets/github.svg'
-import phoenix from '../assets/phoenix.svg'
+import Intro from './intro'
 
 type Props = {
   map: Array<Object>,
@@ -51,49 +50,23 @@ class Index extends Component<Props, State> {
   }
 
   render(){
+    const renderMap = document.documentElement.clientWidth > 960
+    console.log('this.state.selectedCountry',this.state.selectedCountry)
     return (
       <div>
-        <div className="flex flex-wrap w-4/5 mx-auto my-12">
-          <div className="flex flex-wrap flex-1 mr-8 text-sm md:text-xl leading-normal t-shadow">
-            <div className="flex">
-              <div className="">
-                <img src={`/${me}`} className=" rounded-full border-grey-darker border-4 bolder-solid mr-4 float-left w-20" />
-              </div>
+        <Intro />
+        <div className="flex flex-wrap app md:w-4/5">
+          { renderMap ?
+            <div className="-ml-16">
+              <Map countrySelect={this.countrySelect} country={this.state.selectedCountry} />
             </div>
-            <div className="flex-1">
-              <h2 className="title ">Derek Rush <span style={{fontSize: '1.6rem'}}>Assessment</span></h2>
-              <div className="flex">
-                <div className="mr-8">
-
-                </div>
-                <div className="">
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="flex-1 t-shadow">
-            <h2 className="title">Notes</h2>
-            <ul>
-              <li className="py-4">Initial GET request retrieves a list of all countries with only two fields 
-              "numericCode" and "name". Numeric code is used to link the map to the country name 
-              and the names are used to populate the dropdown component.</li>
-              <li></li>
-
-            </ul>
-          </div>
-        </div>
-        <div className="flex flex-wrap bottom-half">
-          <div className="flex-1">
-            <Map countrySelect={this.countrySelect} country={this.state.selectedCountry} />
-          </div>
-          <div className="flex-1">
-            { this.props.details ? 
-              <CountryCard 
-                country={this.state.selectedCountry}
-                countrySelect={this.countrySelect}
-                countryList={this.props.list}
-                /> : null}
+          : null }
+          <div className="flex-1 h-88">
+            <CountrySelector 
+              country={this.state.selectedCountry} 
+              countrySelect={this.countrySelect}
+              countryList={this.props.list} />
+            { this.state.selectedCountry ? <CountryCard country={this.state.selectedCountry}/> : null}
           </div>
         </div>
       </div>

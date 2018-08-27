@@ -8,7 +8,7 @@ const drawCountry = () => {
     .translate([ 800/2, 600/2 ])
 }
 
-const Country = (props: Object) => {
+const CountryElement = (props: Object) => {
   const color = 1 / props.count * props.idx + 0.2
   return (
     <path
@@ -24,4 +24,4 @@ const Country = (props: Object) => {
   )
 }
 
-export default Country
+export default CountryElement

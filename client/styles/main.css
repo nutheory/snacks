@@ -6,9 +6,13 @@ body{
   font-family: 'Source Sans Pro','Roboto','Oxygen','cursive','Droid Sans','Helvetica Neue';
 }
 
-.bottom-half{
-  height: 600px;
-  width: 100%;
+a:link, a:visited, a:active{
+  color: #fff;
+  text-decoration: none;
+}
+
+.app{
+  margin: auto;
   border-bottom: solid 1px #3D4850;
 }
 
@@ -17,9 +21,8 @@ body{
   max-height: 48px
 }
 
-.title{
+.title, .sub-title, .country-data{
   font-family: 'Shrikhand', cursive;
-  font-size: 2.6rem;
   font-weight: 500;
 }
 
@@ -94,7 +97,7 @@ body{
   border: 1px solid #1c252b;
   /* border-color: #1c252b; */
   height: 2.6rem;
-  width: 80%;
+  width: 90%;
   display: flex;
   margin: 0.2rem;
   & input{
@@ -118,9 +121,3 @@ body{
     height: 1.6rem;
   }
 }
-
-.country-data{
-  font-size: 1.6rem;
-  font-family: 'Shrikhand', cursive;
-}
-

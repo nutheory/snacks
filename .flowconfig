@@ -7,5 +7,7 @@
 [lints]
 
 [options]
+module.file_ext=.pdf
+module.ignore_non_literal_requires=true
 
 [strict]
