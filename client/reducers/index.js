@@ -1,29 +1,27 @@
-import { CREATE_MAP, CREATE_LIST, GET_DETAILS } from '../actions/index'
+import { GET_MAP_SUCCESS, GET_LIST_SUCCESS, GET_DETAILS_SUCCESS } from '../actions/index'
 import { combineReducers } from 'redux'
 
-const initCountryDetail = []
-
-const mapReducer = (state = {}, {type, payload}) => {
+const map = (state = {}, {type, payload}) => {
   switch(type){
-    case CREATE_MAP:
+    case GET_MAP_SUCCESS:
       return payload.map 
     default: 
       return state   
   }
 }
 
-const countriesReducer = (state = [], {type, payload}) => {
+const countryList = (state = [], {type, payload}) => {
   switch(type){
-    case CREATE_LIST:
+    case GET_LIST_SUCCESS:
       return payload.list 
     default: 
       return state   
   }
 }
 
-const countryReducer = (state = [], {type, payload}) => {
+const countryDetailsList = (state = [], {type, payload}) => {
   switch(type){
-    case GET_DETAILS: 
+    case GET_DETAILS_SUCCESS: 
       return [...state, payload.details]
     default: 
       return state   
@@ -32,9 +30,9 @@ const countryReducer = (state = [], {type, payload}) => {
 
 
 const combinedReducers = combineReducers({
-  map: mapReducer,
-  list: countriesReducer,
-  details: countryReducer
+  map,
+  countryList,
+  countryDetailsList
 })
 
 export default combinedReducers

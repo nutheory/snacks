@@ -10,8 +10,8 @@ import Intro from './intro'
 
 type Props = {
   map: Array<Object>,
-  details: Array<Object>,
-  list: Array<Object>,
+  countryDetailsList: Array<Object>,
+  countryList: Array<Object>,
   onGetCountryList: Function,
   onGetCountryDetails: Function
 }
@@ -37,14 +37,14 @@ class Index extends Component<Props, State> {
   }
 
   static getDerivedStateFromProps(nextProps: Object, prevState: Object){
-    if(last(nextProps.details) !== prevState.selectedCountry){
-      return ({ selectedCountry: last(nextProps.details) })
+    if(last(nextProps.countryDetailsList) !== prevState.selectedCountry){
+      return ({ selectedCountry: last(nextProps.countryDetailsList) })
     }
     return null
   }
 
   countrySelect(country: string){
-    const countryList = this.props.list.length > 0 ? this.props.list : []
+    const countryList = this.props.countryList.length > 0 ? this.props.countryList : []
     const selected = find(propEq('numericCode', country))(countryList)
     this.props.onGetCountryDetails(selected.name)
   }
@@ -64,7 +64,7 @@ class Index extends Component<Props, State> {
             <CountrySelector 
               country={this.state.selectedCountry} 
               countrySelect={this.countrySelect}
-              countryList={this.props.list} />
+              countryList={this.props.countryList} />
             { this.state.selectedCountry ? <CountryCard country={this.state.selectedCountry}/> : null}
           </div>
         </div>
@@ -76,8 +76,8 @@ class Index extends Component<Props, State> {
 const mapStateToProps = (state) => {
   return {
     map: state.map, 
-    list: state.list, 
-    details: state.details
+    countryList: state.countryList, 
+    countryDetailsList: state.countryDetailsList
   }
 }
 
