@@ -7,7 +7,7 @@ import PDF from '../assets/resume.pdf'
 
 const Intro = () => {
   return (
-    <div className="flex flex-wrap w-4/5 mx-auto mt-12 mb-8 md:mb-12 lg:mb-20">
+    <div className="flex flex-wrap w-4/5 mx-auto mt-12 mb-8">
       <div className="flex-1 mr-8 text-lg md:text-xl t-shadow">
         <div className="flex">
           <div className="w-20">
@@ -46,9 +46,10 @@ const Intro = () => {
           The numeric code is used to link the map to the country name and the country names are used to populate the 
           CountrySelector component.</p>
           <p className="py-2"><strong>Map</strong>: Created with D3 to provide interactivity. Makes call to express server for 
-          country coords and renders <strong>CountryElement</strong> which draws each country on the map.</p>
+          country coords and renders <strong>CountryElement</strong> which draws each country on the map. <i>Map is hidden on 
+          smaller devices and countries that dont highlight after dropdown selection are just too small.</i></p>
           <p className="py-2"><strong>CountrySelector</strong>: Custom dropdown with filter/search feature for selecting a country.</p>
-          <p className="py-2"><strong>CountryCard</strong>: Renders stateless functional component with coutry details.</p></li>
+          <p className="py-2"><strong>CountryCard</strong>: Renders stateless functional component with country details.</p></li>
           <li className="py-2">Type checking using Flow.</li>
           <li className="py-2">...and its responsive (tailwindcss).</li>
         </ul>

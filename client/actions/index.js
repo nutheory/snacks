@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const CREATE_MAP = "country:createMap"
 export const CREATE_LIST = "country:createList"
-export const UPDATE_DETAILS = "country:updateDetails"
+export const GET_DETAILS = "country:getDetails"
 
 export const createMap = (map) => ({
   type: CREATE_MAP,
@@ -14,19 +14,20 @@ export const createList = (list) => ({
   payload: { list }
 })
 
-export const updateDetails = (details) => ({
-  type: UPDATE_DETAILS,
+export const getDetails = (details) => ({
+  type: GET_DETAILS,
   payload: { details }
 })
+
 
 export const getCountryDetails = (countryName) => {
   const request = axios.get(`https://restcountries.eu/rest/v2/name/${countryName}?fullText=true`)
   return (dispatch) => {
     request.then(({ data, status }) => {
       if (status !== 200) {
-        dispatch()
+        console.log(status)
       } else {
-        dispatch(updateDetails(data[0]))
+        dispatch(getDetails(data[0]))
       }
     })
   }
@@ -37,7 +38,7 @@ export const getCountryList = () => {
   return (dispatch) => {
     request.then(({ data, status }) => {
       if (status !== 200) {
-        dispatch()
+        console.log(status)
       } else {
         dispatch(createList(data))
       }
@@ -50,7 +51,7 @@ export const getCountryBoundries = () => {
   return (dispatch) => {
     request.then(({ data, status }) => {
       if (status !== 200) {
-        dispatch()
+        console.log(status)
       } else {
         dispatch(createMap(data))
       }

@@ -51,7 +51,6 @@ class Index extends Component<Props, State> {
 
   render(){
     const renderMap = document.documentElement.clientWidth > 960
-    console.log('this.state.selectedCountry',this.state.selectedCountry)
     return (
       <div>
         <Intro />

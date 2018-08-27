@@ -1,4 +1,4 @@
-import { CREATE_MAP, CREATE_LIST, UPDATE_DETAILS } from '../actions/index'
+import { CREATE_MAP, CREATE_LIST, GET_DETAILS } from '../actions/index'
 import { combineReducers } from 'redux'
 
 const initCountryDetail = []
@@ -23,7 +23,7 @@ const countriesReducer = (state = [], {type, payload}) => {
 
 const countryReducer = (state = [], {type, payload}) => {
   switch(type){
-    case UPDATE_DETAILS: 
+    case GET_DETAILS: 
       return [...state, payload.details]
     default: 
       return state   

@@ -53,9 +53,7 @@ class Map extends Component<Props, *> {
 }
 
 const mapStateToProps = (state) => {
-  return {
-    map: state.map
-  }
+  return { map: state.map }
 }
 
 const mapActionsToProps = {
