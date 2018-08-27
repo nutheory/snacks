@@ -1,0 +1,126 @@
+body{
+  background-image: url('../assets/be@2x.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:#fff;
+  font-family: 'Source Sans Pro','Roboto','Oxygen','cursive','Droid Sans','Helvetica Neue';
+}
+
+.bottom-half{
+  height: 600px;
+  width: 100%;
+  border-bottom: solid 1px #3D4850;
+}
+
+.flag{
+  width: 72px;
+  max-height: 48px
+}
+
+.title{
+  font-family: 'Shrikhand', cursive;
+  font-size: 2.6rem;
+  font-weight: 500;
+}
+
+.scaling-svg-container {
+  position: relative;
+  height: 600px;
+  width: 800px; 
+}
+
+.scaling-svg {
+  height: 100%;
+  width: 100%;
+}
+
+.dropdown {
+  position: relative;
+  height: 4.4rem;
+  outline: 0;
+  padding: 10px 16px;
+  display: block;
+  color: #9fa8b0;
+  text-shadow: 1px 1px #1f272b;
+  border: 1px solid #1c252b;
+  border-radius: 0.5rem;
+  background: -moz-linear-gradient(top, #3D4850 3%, #313d45 4%, #232B30 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#3D4850), color-stop(4%,#313d45), color-stop(100%,#232B30));
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3D4850', endColorstr='#232B30',GradientType=0 );
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+}
+
+.dropdown:hover {
+  color: #fff;
+  cursor:pointer;
+  background: -moz-linear-gradient(top, #4C5A64 3%, #404F5A 4%, #2E3940 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#4C5A64), color-stop(4%,#404F5A), color-stop(100%,#2E3940));
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C5A64', endColorstr='#2E3940',GradientType=0 );
+}
+.dropdown:active {
+  background-position: 0 top;
+  position: relative;
+  top: 1px;
+  color: #fff;
+  padding: 6px 12px 4px;
+  background: -moz-linear-gradient(top, #20282D 3%, #252E34 51%, #222A30 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#20282D), color-stop(51%,#252E34), color-stop(100%,#222A30));
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#20282D', endColorstr='#222A30',GradientType=0 );
+  box-shadow: 1px 1px 1px rgba(255,255,255,0.1);
+}
+
+.dropdown-options{
+  position: absolute;
+  height: 16rem;
+  width: 100%;
+  top: 4.5rem;
+  left: 0;
+  border-radius: 0.5rem;
+  border-color: #1c252b;
+  background: #2E3940;
+  padding: 1rem 0;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, .4);
+}
+
+.t-shadow{
+  text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+}
+
+.search-wrapper{
+  position: relative;
+  box-shadow: inset 0 0.25rem 0.125rem 0 rgba(0,0,0,0.5);
+  background: #343a40;
+  border-radius: 0.5rem;
+  border: 1px solid #1c252b;
+  /* border-color: #1c252b; */
+  height: 2.6rem;
+  width: 80%;
+  display: flex;
+  margin: 0.2rem;
+  & input{
+    -webkit-appearance: none;
+    position: absolute;
+    width: 100%;
+    font-size: 1.6rem;
+    font-family: 'Shrikhand', cursive;
+    padding: 0.5rem 0.5rem 0.5rem 3rem;
+    background: transparent;
+    color: #9fa8b0
+  }
+  & input:focus{
+    outline: none;
+  }
+  & .search-icon{
+    position: absolute;
+    top: 0.5rem;
+    left: 0.6rem;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+.country-data{
+  font-size: 1.6rem;
+  font-family: 'Shrikhand', cursive;
+}
+

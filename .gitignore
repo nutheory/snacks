@@ -1,0 +1,10 @@
+# Generated assets
+/public/assets
+/public/packs
+/public/packs-test
+
+# Packages
+/node_modules
+
+# Ignore npm's lockfile
+package-lock.json

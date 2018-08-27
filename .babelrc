@@ -1,0 +1,11 @@
+{
+  "presets":["env", "react", "flow"],
+  "plugins": [
+    "transform-regenerator",
+    "transform-object-rest-spread",
+    [ "transform-runtime", {
+      "polyfill": false,
+      "regenerator": true
+    }]
+  ]
+}
